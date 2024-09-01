@@ -1,0 +1,7 @@
+python-dotenv
+langchain
+openai
+tiktoken
+yt_dlp
+textwrap3
+git+https://github.com/openai/whisper.git
