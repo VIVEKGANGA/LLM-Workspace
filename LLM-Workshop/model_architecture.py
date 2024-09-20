@@ -38,7 +38,7 @@ class GPTModel(nn.Module):
     
 #Testing the working of GPT architecture
 tokenizer = tiktoken.get_encoding("gpt2")
- 
+"""
 batch = []
 txt1 = "Every effort moves you"
 txt2 = "Every day holds a"
@@ -46,15 +46,11 @@ txt2 = "Every day holds a"
 batch.append(torch.tensor(tokenizer.encode(txt1)))
 batch.append(torch.tensor(tokenizer.encode(txt2)))
 batch = torch.stack(batch, dim=0)
-print(batch)
 
 torch.manual_seed(123)
 model = GPTModel(GPT_CONFIG_124M)
 out = model(batch)
-print("Input batch:\n", batch)
-print("\nOutput shape:", out.shape)
-print(out)
-
+"""
 
 # Generate Text
 
@@ -72,7 +68,7 @@ def generate_text(model, idx, max_new_tokens, context_size):
         idx = torch.cat((idx, idx_next), dim=1) #(batch, n_tokens+1)
     return idx
 
-
+"""
 input_text = "Hello, How are"
 encoded = tokenizer.encode(input_text)
 print("encoded:", encoded)
@@ -91,3 +87,4 @@ print("Output length:", len(out[0]))
 decoded_text = tokenizer.decode(out.squeeze(0).tolist())
 print(decoded_text)
 
+"""
